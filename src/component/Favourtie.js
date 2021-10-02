@@ -17,7 +17,9 @@ export class Favourtie extends Component {
 	}
 
 	componentDidMount = async () => {
-		const request = await axios.get(`http://localhost:8001/color/favourite`);
+		const request = await axios.get(
+			`https://practice301exam.herokuapp.com/color/favourite`
+		);
 		this.setState({
 			favouriteData: request.data,
 			showFavouriteData: true,
@@ -26,7 +28,7 @@ export class Favourtie extends Component {
 
 	removeFavourite = async (slug) => {
 		const request = await axios.delete(
-			`http://localhost:8001/color/favourite/${slug}`
+			`https://practice301exam.herokuapp.com//color/favourite/${slug}`
 		);
 
 		this.setState({
@@ -50,7 +52,7 @@ export class Favourtie extends Component {
 			idDrink: this.state.idDrink,
 		};
 		const request = await axios.put(
-			`http://localhost:8001/color/favourite/${this.state.slug}`,
+			`https://practice301exam.herokuapp.com//color/favourite/${this.state.slug}`,
 			updated
 		);
 

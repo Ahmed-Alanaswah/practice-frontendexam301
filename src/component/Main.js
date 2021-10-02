@@ -13,7 +13,9 @@ export class Main extends Component {
 	}
 
 	componentDidMount = async () => {
-		const request = await axios.get(`http://localhost:8001/color`);
+		const request = await axios.get(
+			`https://practice301exam.herokuapp.com//color`
+		);
 		this.setState({
 			dataColorApi: request.data,
 			showDataColor: true,
@@ -22,7 +24,7 @@ export class Main extends Component {
 
 	addToFavourite = async (obj) => {
 		const request = await axios.post(
-			`http://localhost:8001/color/favourite`,
+			`https://practice301exam.herokuapp.com//color/favourite`,
 			obj
 		);
 		console.log(obj);
